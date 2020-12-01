@@ -137,7 +137,7 @@ legend('0 Degrees Beta', '10 Degrees Beta', '20 Degrees Beta', 'Location', 'Nort
 
 %%
 
-[t,D,P,R,H]=ReadIn3('TowPoint_391_BeamFr_3.75_Run24.csv');
+[t,D,P,R,H]=ReadIn3('TowPoint_391_BeamFr_0.00_Run17.csv');
 Df=filterfilter(D,length(D),100,.75,3);
 subplot(2,1,1);
 plot(t,D);
@@ -146,6 +146,8 @@ plot(t,Df);
 Pf=filterfilter(P,length(P),100,.75,3);
 Rf=filterfilter(R,length(R),100,.75,3);
 Hf=filterfilter(H,length(H),100,.75,3);
-mean(Df(2200:2300))
-mean(Pf(2200:2300))
-mean(Hf(2200:2300))
+plot(t,Pf)
+mean(P)
+mean(Df(2200:2300));
+mean(Pf(2200:2300));
+mean(Hf(2200:2300));
