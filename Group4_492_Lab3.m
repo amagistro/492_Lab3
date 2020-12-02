@@ -151,3 +151,29 @@ mean(P)
 mean(Df(2200:2300));
 mean(Pf(2200:2300));
 mean(Hf(2200:2300));
+
+%% Section 9
+vg=[1.973 2.378 2.7624 3.157 3.552 3.946 4.341 4.736 5.13 5.525 5.919];
+Clbg=[1.1943 0.8221 0.6092 0.4664 0.3685 0.2986 0.2467 0.2073 0.1767 0.1523 0.1327];
+sclb=sqrt(Clbg./2);
+tg=[8.9765 10.1926 11.0776 11.8494 11.175 10.18 8.939 8.298 7.58 6.5179 5.4452];
+tge=tg-4;
+tpg=[0];
+plot(vg, Clbg);
+
+figure();
+plot(sclb,tg);
+hold on;
+
+plot(S64_B0(:,1), S64_B0(:,2));
+hold on
+plot(S64_B10(:,1), S64_B10(:,2));
+plot(S64_B20(:,1), S64_B20(:,2));
+hold off
+
+xlabel('Square root of C_L / 2');  % Refine this somehow
+ylabel('Trim Angle, Degrees');
+title('Porpoising Limits for Prismatic Planing Hulls');
+legend('0 Degrees Beta', '10 Degrees Beta', '20 Degrees Beta', 'Location', 'Northwest');
+
+
